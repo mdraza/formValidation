@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign Up Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        
+        <div class="row mt-6">
+            <div class="offset-md-2 col-md-4 frm p-5">
+                <div class="bg">
+
+                </div>
+            </div>
+            <div class=" col-md-4 frm p-5">
+                <h2 class="text-center display-4 mb-4">Sign Up Form</h2>
+                <form action="" onchange="return validate()" onsubmit="return validate()" autocomplete="off">
+                    <div class="form-group">
+                        <label for="fname">Full Name:</label>
+                        <input type="text" class="form-control" id="fname" placeholder="Enter Full Name">
+                        <span id="fnameErr" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname">User Name:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Enter User Name">
+                        <span id="unameErr" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="pass" placeholder="Enter Password">
+                        <span id="passErr" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpassword">Confirm Password:</label>
+                        <input type="password" class="form-control" id="cpass" placeholder="Enter Confirm Password">
+                        <span id="cpassErr" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email ID">
+                        <span id="emailErr" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+
+    <script>
+        function validate(){
+            var fullName = document.getElementById("fname").value;
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("pass").value;
+            var cpassword = document.getElementById("cpass").value;
+            var email = document.getElementById("email").value;
+
+            /*---Pattern---*/
+            var fname = /^[A-Za-z. ]{3,}$/;
+            var uname = /^[a-zA-Z]{3,}[0-9]{0,}$/;
+            var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+            var emailv = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if(!fname.test(fullName)){
+                document.getElementById("fnameErr").innerHTML = "Invalid Name!!!";
+                return false;
+            } else{
+                document.getElementById("fnameErr").innerHTML = "";
+            }
+            if(!uname.test(username)){
+                document.getElementById("unameErr").innerHTML = "Invalid User Name!!!";
+                return false;
+            } else{
+                document.getElementById("unameErr").innerHTML = "";
+            }
+            if(!pass.test(password)){
+                document.getElementById("passErr").innerHTML = "Invalid Password!!!";
+                return false;
+            } else{
+                document.getElementById("passErr").innerHTML = "";
+            }
+            if(!pass.test(cpassword)){
+                document.getElementById("cpassErr").innerHTML = "Password & Confirm Password is not Matched!!!";
+                return false;
+            } else{
+                document.getElementById("cpassErr").innerHTML = "";
+            }
+            if(!emailv.test(email)){
+                document.getElementById("emailErr").innerHTML = "Invalid Email ID!!!";
+                return false;
+            } else{
+                document.getElementById("emailErr").innerHTML = "";
+            }
+
+        }
+    
+    </script>
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
