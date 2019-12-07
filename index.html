@@ -14,36 +14,34 @@
     <div class="container mt-5">
         
         <div class="row mt-6">
-            <div class="offset-md-2 col-md-4 frm">
-                <div class="bg">
-                    <!-- <img src="images/bg2.jpg" alt="" srcset=""> -->
-                </div>
+            <div class="offset-md-2 col-md-4 frm bg">
+                
             </div>
             <div class=" col-md-4 frm">
                 <h2 class="text-center display-4 mb-4">Sign Up Form</h2>
                 <form action="" onchange="return validate()" onsubmit="return validate()" autocomplete="off">
                     <div class="form-group">
-                        <label for="fname">Full Name:</label>
+                        <label for="fname">Full Name</label>
                         <input type="text" class="form-control" id="fname" placeholder="Enter Full Name">
                         <small id="fnameErr" class="text-danger"></small>
                     </div>
                     <div class="form-group">
-                        <label for="uname">User Name:</label>
+                        <label for="uname">User Name</label>
                         <input type="text" class="form-control" id="uname" placeholder="Enter User Name">
                         <small id="unameErr" class="text-danger"></small>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password:</label>
+                        <label for="password">Password</label>
                         <input type="password" class="form-control" id="pass" placeholder="Enter Password">
                         <small id="passErr" class="text-danger"></small>
                     </div>
                     <div class="form-group">
-                        <label for="cpassword">Confirm Password:</label>
+                        <label for="cpassword">Confirm Password</label>
                         <input type="password" class="form-control" id="cpass" placeholder="Enter Confirm Password">
                         <small id="cpassErr" class="text-danger"></small>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email:</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter Email ID">
                         <small id="emailErr" class="text-danger"></small>
                     </div>
@@ -55,58 +53,6 @@
     <br><br><br>
 
 
-    <script>
-        function validate(){
-            var fullName = document.getElementById("fname").value;
-            var username = document.getElementById("uname").value;
-            var password = document.getElementById("pass").value;
-            var cpassword = document.getElementById("cpass").value;
-            var email = document.getElementById("email").value;
-
-            /*---Pattern---*/
-            var fname = /^[A-Za-z. ]{3,}$/;
-            var uname = /^[a-zA-Z]{3,}[0-9]{0,}$/;
-            var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
-            var emailv = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-            if(!fname.test(fullName)){
-                document.getElementById("fnameErr").innerHTML = "Invalid Name!!!";
-                return false;
-            } else{
-                document.getElementById("fnameErr").innerHTML = "";
-            }
-            if(!uname.test(username)){
-                document.getElementById("unameErr").innerHTML = "Invalid User Name!!!";
-                return false;
-            } else{
-                document.getElementById("unameErr").innerHTML = "";
-            }
-            if(!pass.test(password)){
-                document.getElementById("passErr").innerHTML = "Invalid Password, Please Insert one special character and number!!!";
-                return false;
-            } else{
-                document.getElementById("passErr").innerHTML = "";
-            }
-            if(!pass.test(cpassword)){
-                document.getElementById("cpassErr").innerHTML = "Password & Confirm Password is not Matched!!!";
-                return false;
-            } else{
-                document.getElementById("cpassErr").innerHTML = "";
-            }
-            if(!emailv.test(email)){
-                document.getElementById("emailErr").innerHTML = "Invalid Email ID!!!";
-                return false;
-            } else{
-                document.getElementById("emailErr").innerHTML = "";
-            }
-
-        }
-    
-    </script>
-
-
-
-
 
 
 
@@ -114,6 +60,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
