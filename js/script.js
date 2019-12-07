@@ -11,6 +11,7 @@ function validate(){
     var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
     var emailv = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
+    /*---Condition---*/
     if(!fname.test(fullName)){
         document.getElementById("fnameErr").innerHTML = "Invalid Name!!!";
         return false;
